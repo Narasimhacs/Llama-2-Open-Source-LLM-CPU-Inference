@@ -18,10 +18,10 @@ with open('config/config.yml', 'r', encoding='utf8') as ymlfile:
 
 def build_llm():
     # Local CTransformers model
-    llm = CTransformers(model=cfg.MODEL_BIN_PATH,
-                        model_type=cfg.MODEL_TYPE,
-                        config={'max_new_tokens': cfg.MAX_NEW_TOKENS,
-                                'temperature': cfg.TEMPERATURE}
+    llm = CTransformers( model = "llama-2-7b-chat.ggmlv3.q8_0.bin",
+        model_type="llama",
+        max_new_tokens = 512,
+        temperature = 0.5
                         )
 
     return llm
